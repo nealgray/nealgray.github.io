@@ -1,0 +1,113 @@
+/* 
+
+Common Styles for the navigation menus, desktop and mobile. 
+v2
+
+*/
+
+/* ==================================================================
+   Styling for Navigation Menus
+===================================================================== */
+
+/* Base Navigation Styles
+..................................................................... */
+
+/* Navigation Menu - common styles */
+.nav-menu {
+    list-style-type: none;
+    padding: 0;
+    /* background-color: #333; */
+    overflow: hidden;
+    margin: 0; /* Adjusted to remove redundant '0px 0 0' */
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    /* background-color: #333; */
+    overflow: hidden;
+    margin: 0px 0 0;
+    /* Top margin for separation from the header, change 0px to 20px if desired */
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu ul li {
+    margin: 0 10px; /* Separation between nav items */
+}
+
+.nav-menu ul li a {
+    display: block;
+    color: white; /* Text color */
+    padding: 14px 16px; /* Adjust based on your design */
+    text-decoration: none;
+}
+
+.nav-menu ul li a:hover,
+.nav-menu ul li a:focus {
+background-color: #555; /* Hover and focus background color */
+}
+
+.nav-menu-logo {
+    display: block;
+    width: 100px; /* Set the width */
+    height: 50px; /* Set the height */
+    margin-top: 5px;
+    object-fit: contain; /* This ensures the image scales correctly within the dimensions */
+}
+
+/* Hamburger Style Menu Button - shown only on mobile */
+.mobile-menu {
+    display: none; /* Hidden by default */
+    font-size: 36px; /* Icon size */
+    background: none;
+    border: none;
+    color: #fff; /* Adjust based on your header's color scheme */
+    cursor: pointer; /* To indicate it's clickable */
+}
+
+/* Hamburger Menu and Responsive Adjustments 
+    Add and (hover: hover) to @media to prevent larger screens from using the mobile icon.
+*/
+@media (max-width: 768px)  {
+
+    .mobile-menu {
+        display: block; /* Show the hamburger icon on smaller screens */
+    }
+
+    .nav-menu {
+        display: none; /* Hide by default */
+        flex-direction: column;
+        width: 100%; /* Full width */
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-menu ul {
+        flex-direction:column;
+        /* Changes nav items to a vertical layout */
+        align-items: center;
+        /* Centers the nav items if the container is flex */
+        padding: 0;
+        /* Optional: Adjust padding as needed */
+    }
+
+    .nav-menu ul li {
+        text-align: center; /* Center text for mobile */
+        width: 100%; /* Full width for list items */
+    }
+    
+    .nav-menu ul li a {
+        padding: 10px; /* Adjust padding for mobile */
+        display: block;
+    }
+    .nav-menu-logo {
+        margin: auto;
+    }
+    
+}
+

@@ -1,0 +1,69 @@
+/* 
+
+Common Styles for all sub-pages.  
+Will further subdivide as a page grows.
+v2
+
+*/
+
+/* ==================================================================
+    Styling for Specific Page Styles 
+===================================================================== */
+
+/* Override Main Header Settings */
+.subpage-header {
+    padding: 0px;
+    height: 0px;
+}
+
+/* 
+    Styling for Cyber Background Image 
+..................................................................... */
+.background-image--cyber {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background: url("/images/kali-2.0-1024x768.webp") no-repeat center center;
+    /* background: url('/images/DALLE\ BeachScene7.webp') no-repeat center center; */
+    background-size: cover;
+    height: 60vh; /* Or any fixed height, default 750px */
+    /* Set a fixed height, or adjust as needed */
+    /* Height might need slightly larger size, depending on screen size */
+    color: #fff;
+    /* Set text color to white for better contrast */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    /* Modify the 8px for blur and 0.7 for alpha */
+    /* Increasing the blur-radius will make the shadow softer and larger, while increasing the alpha value will make the shadow darker. */
+}
+
+/* ==================================================================
+    Styling for Blog Index
+===================================================================== */
+
+.blog-list {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+.blog-preview {
+    margin-bottom: 2em;
+}
+
+.blog-preview h2 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.date {
+    color: #333;
+    font-style: italic;
+}
+
+.blog-text--color {
+    text-decoration: none;
+    color: #fff;
+}

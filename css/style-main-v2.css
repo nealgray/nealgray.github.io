@@ -1,0 +1,335 @@
+/* 
+
+Common Styles for Headers, Body, Main, and Footer. 
+v2
+
+*/
+
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Common body and html properties */
+body, html {
+    font-family: 'Ubuntu', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Properties for sticky footer */
+html {
+    height: 100%; /* This ensures that the html element takes up the full height */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* This makes the body at least as tall as the viewport */
+}
+
+main {
+    flex: 1;
+    /* Other styling specific to main content */
+}
+
+/* ==================================================================
+    Styling for Header
+===================================================================== */
+
+/* 
+    Default Header Styling, Large Displays 
+    Supports background image in header section
+..................................................................... */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    /* background: url('/images/DALLE\ BeachScene7.webp') no-repeat center center; */
+    background-size: cover;
+    height: 65vh; /* Or any fixed height, 800px default */
+    color: #fff;
+    /* Set text color to white for better contrast */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    /* Modify the 8px for blur and 0.7 for alpha */
+    /* Increasing the blur-radius will make the shadow softer and larger, while increasing the alpha value will make the shadow darker. */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    /* Ensures the content doesn't stretch too wide on larger screens */
+    width: 100%;
+    /* Ensures it takes up the available width */
+    margin: auto;
+    /* Centers the content within the header */
+    position: relative;
+    /* For the overlay positioning */
+    z-index: 2;
+    /* Ensures the text is above the overlay */
+}
+
+/* Optional overlay for better text contrast */
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Adjust the last value (0.5 here) to change the opacity */
+    /* ... */
+    z-index: 1;
+    /* Ensure it's below the text */
+}
+
+.header-image {
+    flex: 1 1 300px;
+    /* Allows flex items to wrap and sets a minimum width */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2;
+    /* Ensures the image is above the overlay */
+}
+
+.header-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.intro h1,
+.intro p {
+    text-align: center;
+    /* Center-align the text */
+    max-width: 800px;
+    /* Maximum width of text to maintain readability */
+    margin: 0 auto 10px;
+    /* Center text block and add spacing */
+}
+
+.intro {
+    flex: 1 1 300px;
+    /* Allows flex items to wrap and sets a minimum width */
+    padding: 20px;
+    z-index: 2;
+    /* Ensures the text is above the overlay */
+}
+
+/* 
+    Responsive Header Design for Mobile 
+..................................................................... */
+@media (max-width: 768px) and (hover: none) {
+    .header-content {
+        flex-direction: column;
+        /* Stacks flex items vertically */
+        align-items: center;
+        /* Centers items horizontally */
+        text-align: center;
+        /* Ensures text is centered */
+    }
+
+    .header-image img {
+        max-width: 90%;
+        /* Adjust if you want the image to be smaller than full width */
+        height: auto;
+        /* Maintains the aspect ratio of the image */
+    }
+
+    .header-image {
+        order: 1;
+        /* Places the image first */
+        width: 100%;
+        /* Full width of the container */
+        padding: 0;
+        /* Remove padding to allow the image to use more space if necessary */
+    }
+
+    .intro {
+        order: 2;
+        /* Places the text second */
+        padding: 10px 0;
+        /* Add vertical padding as needed */
+    }
+}
+
+/* 
+    Responsive Header Design for Larger than Mobile 
+    Adjusts spacing between header elements on large screens.  
+..................................................................... */
+@media (min-width: 768px) {
+    header {
+        justify-content: space-between;
+    }
+
+    .intro,
+    .header-image {
+        flex: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .intro {
+        padding-right: 60px;
+        /* Adds more space between the text and the image on larger screens */
+    }
+}
+
+/* ==================================================================
+    Styling for Footer Section 
+===================================================================== */
+
+/* 
+    This creates a horizontal / stacked footer, suitable for 
+    mobile screens  
+..................................................................... */
+footer {
+    position: relative;
+    /* original background-color: #333; */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Create a divider between the main and footer sections */
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px; /* Adjust the thickness */
+    background-color: #cacaca; /* Or any color */
+    margin: 10px 0; /* Add some space above and below the divider */
+    border: none; /* Remove the default border */
+}
+
+.footer-content p,
+.footer-content .social-links a {
+    margin: 10px 0;
+    color: #fff;
+}
+
+.email-link {
+    color: #fff;
+}
+
+.social-links a {
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.follow-me {
+    margin-bottom: 20px;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size:x-small;
+}
+
+/* 
+    Responsive Footer Design for Larger than Mobile 
+    Creates a vertical footer with spacing for larger screens.
+..................................................................... */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-email,
+    .social-links,
+    .footer-copy {
+        flex: 1;
+        text-align: center;
+    }
+
+    .footer-email {
+        text-align: left;
+    }
+
+    .footer-copy {
+        text-align: right;
+        font-size:x-small;
+    }
+}
+
+/* ==================================================================
+    Common / General Styles
+===================================================================== */
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    /* Horizontally center content */
+    align-items: center;
+    /* Vertically center content (if needed) */
+    text-align: center;
+    /* Ensures text inside the centered element is also centered */
+}
+
+.text-box--standard {
+    padding: 40px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: justify;
+}
+
+/* Standard text box for mobile */
+@media (max-width: 768px) {
+    .text-box--standard {
+        padding: 20px; /* Reduced padding for mobile screens */
+        max-width: 100%; /* Allows the box to adjust to the screen width */
+        width: calc(100% - 20px); /* Adjusts width to allow for padding */
+        box-sizing: border-box; /* Includes padding in the element's total width and height */
+    }
+}
+
+/* 
+    https://uigradients.com/#50ShadesofGrey 
+    Gradient sites to review:  cssgradient.io, colorzilla.com/gradient-editor/, 
+    cssgradientgenerator.com, webgradients.com
+..................................................................... */
+.background-gradient {
+    background: #bdc3c7;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Google Material Symbols */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
